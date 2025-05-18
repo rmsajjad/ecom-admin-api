@@ -3,7 +3,7 @@ from database import Base
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
-class Product(Base):
+class Category(Base):
     __tablename__ = 'categories'
     id = Column(Integer, index = True)
     category = Column(String(50), primary_key=True, nullable = False)

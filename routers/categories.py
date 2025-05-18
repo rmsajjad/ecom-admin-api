@@ -7,7 +7,7 @@ router = APIRouter()
 
 @router.get("/category")
 def retrieve_all_categories(session: Session = Depends(get_session)):
-    return session.query(models.Product).all()
+    return session.query(models.Category).all()
 
 @router.post("/category", status_code = status.HTTP_201_CREATED)
 def add_category(category: schemas.Category, session: Session = Depends(get_session)):

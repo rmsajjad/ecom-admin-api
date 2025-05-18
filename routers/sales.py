@@ -19,7 +19,7 @@ def retrieve_sales_states(saleFilter: schemas.SaleFilter, session: Session = Dep
     if saleFilter.category:
         query = query.filter(models.Product.category == saleFilter.category)
 
-    sale_states = query.order_by(models.email).all()
+    sale_states = query.all()
     result = []
     for sale, product in sale_states:
         result.append({
@@ -39,7 +39,7 @@ def revenue_report(period: str = "daily", days: int = 30, session: Session = Dep
         "weekly": now - timedelta(weeks=1),
         "monthly": now - timedelta(days=30),
         "yearly": now - timedelta(days=365),
-        "x_days": now - timedelta(days=days)
+        "x-days": now - timedelta(days=days)
     }
 
     if period not in duration:
