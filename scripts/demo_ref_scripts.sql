@@ -1,7 +1,21 @@
 
-START TRANSACTION;
+INSERT INTO categories (category) VALUES 
+('Electronics'),
+('Books'),
+('Clothing'),
+('Home & Kitchen'),
+('Toys & Games'),
+('Toys'),
+('Sports & Outdoors'),
+('Beauty & Personal Care'),
+('Automotive'),
+('Grocery'),
+('Health & Household'),
+('Book'),
+('Furniture'),
+('Computers');
 
-#Refrence Data for Products
+
 INSERT INTO products (id, name, description, price, category) VALUES
 (1, 'iPhone 16', 'Electronics, A Apple Product', 1200.00, 'Electronics'),
 (2, 'iPhone 16 Pro', 'Electronics, A Apple Product', 1000.00, 'Electronics'),
@@ -16,7 +30,7 @@ INSERT INTO products (id, name, description, price, category) VALUES
 (11, 'Kindle Paperwhite', 'A best book reader', 139.99, 'Book'),
 (12, 'Office Chair', 'A good option for remote work', 199.99, 'Furniture'),
 (13, 'HP Laptop 15"', 'A good laptop for students', 749.00, 'Computers'),
-(14, 'Dell Laptop 14"', 'A good laptop for students', 749.00, 'Computers');
+(14, 'Dell Laptop 14"', 'A good laptop for students', 749.00, 'Computers'),
 (15, 'Amazon Fire Stick 4K', 'Stream all your favorites in 4K Ultra HD', 49.99, 'Electronics'),
 (16, 'Samsung 55" QLED TV', 'Stunning color and clarity for your home entertainment', 699.99, 'Electronics'),
 (17, 'Logitech Wireless Mouse', 'Comfortable and long battery life', 29.99, 'Electronics'),
@@ -25,7 +39,7 @@ INSERT INTO products (id, name, description, price, category) VALUES
 (20, 'Dyson V11 Vacuum Cleaner', 'Cordless powerful vacuum for home', 599.99, 'Home & Kitchen');
 
 
-#Inventory Refrence Scripts
+
 INSERT INTO inventory (id, product_id, stock_level, last_updated_at) VALUES
 (1, 1, 50, '2025-05-01 10:00:00'),
 (2, 2, 40, '2025-05-02 11:30:00'),
@@ -49,7 +63,7 @@ INSERT INTO inventory (id, product_id, stock_level, last_updated_at) VALUES
 (20, 20, 8, '2025-04-26 08:30:00');
 
 
-#Refrence data for sale states
+
 INSERT INTO sales (product_id, quantity, total_price, order_date) VALUES
 (1, 10, 499.90, '2025-03-05 09:20:00'),
 (2,  2, 1399.98, '2025-03-06 11:45:00'),
@@ -70,5 +84,3 @@ INSERT INTO sales (product_id, quantity, total_price, order_date) VALUES
 (18,  8,  479.92, '2025-03-11 17:05:00'),
 (19,  3,  539.97, '2025-03-12 11:55:00'),
 (20,  9,  449.91, '2025-03-13 12:35:00');
-
-COMMIT;

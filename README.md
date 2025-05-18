@@ -1,2 +1,6 @@
 # ecom-admin-api
-Python FastApi E-commerce website
+Python FastApi E-commerce API
+Intro:
+    This FastApi API provide Following Features
+    
+Create DB 

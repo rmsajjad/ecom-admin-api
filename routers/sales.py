@@ -10,15 +10,10 @@ router = APIRouter()
 @router.post("/sales-states", status_code = status.HTTP_201_CREATED)
 def retrieve_sales_states(saleFilter: schemas.SaleFilter, session: Session = Depends(get_session)):
     query = session.query(models.Sale, models.Product).join(models.Product)
-
-    if saleFilter.start_date and saleFilter.end_date:
-        query = query.filter(models.Sale.order_date.between(saleFilter.start_date, saleFilter.end_date))
-    else:
-        if saleFilter.start_date:
-            query = query.filter(models.Sale.order_date >= datetime.fromisoformat(saleFilter.start_date))
-        if saleFilter.end_date:
-            query = query.filter(models.Sale.order_date <= datetime.fromisoformat(saleFilter.end_date))
-    
+    if saleFilter.start_date:
+        query = query.filter(models.Sale.order_date >= datetime.fromisoformat(saleFilter.start_date))
+    if saleFilter.end_date:
+        query = query.filter(models.Sale.order_date <= datetime.fromisoformat(saleFilter.end_date))    
     if saleFilter.product_id:
         query = query.filter(models.Sale.product_id == saleFilter.product_id)
     if saleFilter.category:
