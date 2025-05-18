@@ -32,13 +32,13 @@ cd fastapi-ecommerce-admin
     FLUSH PRIVILEGES;
     Note: Don't forget to update user name and password in database.py file
 
-  Installatioin(Move to project directory)
-    -`Install python according to OS`
-    -`python3 -m venv .venv /python -m venv .venv(Create virtual Envirnament)` 
-    -`source .venv/bin/activate(It may vary for different OS)`
-    -`pip install fastapi,uvicorn,sqlalchemy,pymysql`
-    -`After starting application please execute sql scripts **/scripts/demo_ref_scripts.sql**`
-    -`DDL scrpts are also provided but no need to execute as at start of application tables will create`
+  Installatioin(Move to project directory)<br />
+    -Install python according to OS<br />
+    -python3 -m venv .venv /python -m venv .venv(Create virtual Envirnament)<br />
+    -source .venv/bin/activate(It may vary for different OS)<br />
+    -pip install fastapi,uvicorn,sqlalchemy,pymysql<br />
+    -After starting application please execute sql scripts **/scripts/demo_ref_scripts.sql**<br />
+    -DDL scrpts are also provided but no need to execute as at start of application tables will create<br />
     
 
 API Endpoints Overview
@@ -58,13 +58,13 @@ API Endpoints Overview
 
 More endpoints can be found in the documentation at:
 Swagger UI: http://127.0.0.1:8000/docs#/
-
-Upcoming features:
--Product Information update
--Pagination
--Sale States Generator
--Order by(ASC/DESC) fuctionality for different endopionts
--For get("./revneue") endpoint. New endpointh that will return priod options for admins screen
--Response vaidation
--Separate CRUD operation class
+<br />
+Upcoming features:<br />
+-Product Information update<br />
+-Pagination<br />
+-Sale States Generator<br />
+-Order by(ASC/DESC) fuctionality for different endopionts<br />
+-For get("./revneue") endpoint. New endpointh that will return priod options for admins screen<br />
+-Response vaidation<br />
+-Separate CRUD operation class<br />
 
