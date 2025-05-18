@@ -15,7 +15,7 @@ It is built with **FastAPI** and uses **MySQL** for persistent storage.
 ### 1. Clone the Repository
 
 #bash
-git clone https://github.com/YOUR_USERNAME/fastapi-ecommerce-admin.git
+git clone https://github.com/rmsajjad/ecom-admin-api.git
 cd fastapi-ecommerce-admin
 
 
