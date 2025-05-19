@@ -33,12 +33,12 @@ cd fastapi-ecommerce-admin
     Note: Don't forget to update user name and password in database.py file
 
   #### Installatioin(Move to project directory)<br />
-    -Install python according to OS<br />
-    -python3 -m venv .venv /python -m venv .venv(Create virtual Envirnament)<br />
-    -source .venv/bin/activate(It may vary for different OS)<br />
-    -pip install fastapi,uvicorn,sqlalchemy,pymysql<br />
-    -After starting application please execute sql scripts **/scripts/demo_ref_scripts.sql**<br />
-    -DDL scrpts are also provided but no need to execute as at start of application tables will create<br />
+    -Install python according to OS
+    -python3 -m venv .venv /python -m venv .venv(Create virtual Envirnament)
+    -source .venv/bin/activate(It may vary for different OS)
+    -pip install fastapi,uvicorn,sqlalchemy,pymysql
+    -After starting application please execute sql scripts **/scripts/demo_ref_scripts.sql**
+    -DDL scrpts are also provided but no need to execute as at start of application tables will create
     
 
 ### API Endpoints Overview
