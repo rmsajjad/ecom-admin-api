@@ -67,4 +67,5 @@ Swagger UI: http://127.0.0.1:8000/docs#/
 -For get("./revneue") endpoint. New endpointh that will return priod options for admins screen<br />
 -Response vaidation<br />
 -Separate CRUD operation class<br />
+-JWT(Authentication and Authorization) Implementation<br />
 
