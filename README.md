@@ -21,6 +21,8 @@ cd fastapi-ecommerce-admin
 
 ### 1. Setup Instructions
  #### Dependencies
+    Python
+    Pip
     FastAPI
     SQLAlchemy
     MySQL Connector
@@ -60,12 +62,6 @@ cd fastapi-ecommerce-admin
 Swagger UI: http://127.0.0.1:8000/docs#/
 <br />
 ### Upcoming features:<br />
--Product Information update<br />
--Pagination<br />
--Sale States Generator<br />
--Order by(ASC/DESC) fuctionality for different endopionts<br />
 -For get("./revneue") endpoint. New endpointh that will return priod options for admins screen<br />
--Response vaidation<br />
--Separate CRUD operation class<br />
 -JWT(Authentication and Authorization) Implementation<br />
 
