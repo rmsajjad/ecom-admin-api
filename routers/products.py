@@ -1,34 +1,21 @@
+from typing import List
 from fastapi import APIRouter, Depends, HTTPException,status
 from sqlalchemy.orm import Session
-import models, schemas
+from crud import product_crud
+from schemas import Product,ProductOut,MessageResponse
 from database import get_session
+import crud
 
 router = APIRouter()
 
-@router.get("/product")
-def retrieve_all_product_information(session: Session = Depends(get_session)):
-    return session.query(models.Product).all()
+@router.get("/product", response_model = List[ProductOut])
+def retrieve_all_products(skip: int = 0, limit: int = 10, session: Session = Depends(get_session)):
+    return product_crud.get_all_products(skip, limit, session)
 
-@router.get("/product/{product_id}")
-def get_inventory(product_id: int, session: Session = Depends(get_session)):
-    product = session.query(models.Product).filter(models.Product.id == product_id).first()
-    if not product:
-        raise HTTPException(status_code=404, detail="Product not found")
-    return product
+@router.get("/product/{product_id}", response_model = ProductOut)
+def retrieve_product(product_id: int, session: Session = Depends(get_session)):
+    return product_crud.get_product_by_id(product_id, session)
 
-@router.post("/product", status_code = status.HTTP_201_CREATED)
-def add_product(product: schemas.ProductDetail, session: Session = Depends(get_session)):
-    product_detail = models.Product(
-        name=product.name, 
-        category=product.category, 
-        description=product.description, 
-        price=product.price
-    )
-    session.add(product_detail)
-    session.commit()
-    session.refresh(product_detail)
-
-    inventory_detail = models.Inventory(product_id=product_detail.id, stock_level=product.quantity)
-    session.add(inventory_detail)
-    session.commit()
-    return {"message": "Product registered successfully"}
+@router.post("/product", response_model = MessageResponse, status_code = status.HTTP_201_CREATED)
+def create_new_product(product: Product, session: Session = Depends(get_session)):
+    return product_crud.create_product(product, session)

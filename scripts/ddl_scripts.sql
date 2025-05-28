@@ -1,8 +1,7 @@
 CREATE TABLE categories (
-    id INT AUTO_INCREMENT,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     category VARCHAR(50) NOT NULL,
-    PRIMARY KEY (category),
-    INDEX (id)
+    UNIQUE INDEX (id)
 );
 
 CREATE TABLE products (
